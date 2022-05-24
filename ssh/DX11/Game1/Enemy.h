@@ -10,8 +10,13 @@ class Enemy : public Status
 private:
 	STATE		state;
 	ObImage*	idle;
+	ObImage*	run;
+	ObImage*	jump;
+	ObImage*	fall;
+	ObImage*	attack1;
+	ObImage*	attack2;
 	ObImage*	hit;
-	ObImage*	dead;
+	ObImage*	death;
 public:
 	ObRect* col;
 
@@ -19,6 +24,7 @@ public:
 	~Enemy();
 	void			Action();
 	void			Hit(int dmg);
+	void			Change_State(STATE ps);
 	void			Update();
 	void			Render();
 };

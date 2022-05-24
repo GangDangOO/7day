@@ -4,7 +4,7 @@ Player::Player(int hp, int dmg, int def) : Status(hp, dmg, def){
 
 	col = new ObRect();
 	col->isFilled = false;
-	col->scale = Vector2(1980.0f / 11, 180.0f) / 3;
+	col->scale = Vector2(180.0f, 180.0f) / 3;
 	col->SetWorldPos(Vector2(0.0f, 0.0f));
 
 	idle = new ObImage(L"Player\\Idle.png");
@@ -190,48 +190,50 @@ void Player::Fall_Down()
 
 void Player::Change_State(STATE ps)
 {
-	state = ps;
-	if (state == STATE::IDLE) {
-		idle->frame.x = 0;
-		idle->visible = true;
+	if (state != ps) {
+		state = ps;
+		if (state == STATE::IDLE) {
+			idle->frame.x = 0;
+			idle->visible = true;
+		}
+		else idle->visible = false;
+		if (state == STATE::RUN) {
+			run->frame.x = 0;
+			run->visible = true;
+		}
+		else run->visible = false;
+		if (state == STATE::JUMP) {
+			jump->frame.x = 0;
+			jump->visible = true;
+		}
+		else jump->visible = false;
+		if (state == STATE::FALL) {
+			fall->frame.x = 0;
+			fall->visible = true;
+		}
+		else fall->visible = false;
+		if (state == STATE::ATTACK1) {
+			attack1->frame.x = 0;
+			attack1->visible = true;
+		}
+		else {
+			b_act_atk1 = false;
+			attack1->visible = false;
+		}
+		if (state == STATE::ATTACK2) {
+			attack2->frame.x = 0;
+			attack2->visible = true;
+		}
+		else {
+			b_act_atk2 = false;
+			attack2->visible = false;
+		}
+		if (state == STATE::Hit) {
+			hit->frame.x = 0;
+			hit->visible = true;
+		}
+		else hit->visible = false;
 	}
-	else idle->visible = false;
-	if (state == STATE::RUN) {
-		run->frame.x = 0;
-		run->visible = true;
-	}
-	else run->visible = false;
-	if (state == STATE::JUMP) {
-		jump->frame.x = 0;
-		jump->visible = true;
-	}
-	else jump->visible = false;
-	if (state == STATE::FALL) {
-		fall->frame.x = 0;
-		fall->visible = true;
-	}
-	else fall->visible = false;
-	if (state == STATE::ATTACK1) {
-		attack1->frame.x = 0;
-		attack1->visible = true;
-	}
-	else {
-		b_act_atk1 = false;
-		attack1->visible = false;
-	}
-	if (state == STATE::ATTACK2) {
-		attack2->frame.x = 0;
-		attack2->visible = true;
-	}
-	else {
-		b_act_atk2 = false;
-		attack2->visible = false;
-	}
-	if (state == STATE::Hit) {
-		hit->frame.x = 0;
-		hit->visible = true;
-	}
-	else hit->visible = false;
 }
 
 void Player::Update()

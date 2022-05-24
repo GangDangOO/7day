@@ -6,7 +6,8 @@ class Main : public Scene
 private:
 	BackGround* bg;
 	Player*		player;
-	Enemy*		enemy;
+	Enemy*		warrior;
+	Enemy*		wizard;
 public:
 	virtual void Init() override;
 	virtual void Release() override; //«ÿ¡¶

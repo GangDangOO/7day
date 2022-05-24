@@ -7,7 +7,8 @@ enum class STATE {
 	FALL,
 	ATTACK1,
 	ATTACK2,
-	Hit
+	Hit,
+	Death
 };
 
 class Status

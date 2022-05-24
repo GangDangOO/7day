@@ -4,8 +4,11 @@ void Main::Init()
 {
 	bg = new BackGround();
 	player = new Player(100, 10, 5);
-	enemy = new Enemy(Enemy_Type::Warrior, 100, 10, 0);
-	cout << enemy->Get_Hp() << endl;
+	warrior = new Enemy(Enemy_Type::Warrior, 100, 10, 0);
+	wizard = new Enemy(Enemy_Type::Wizard, 100, 10, 0);
+
+	warrior->col->SetWorldPos(Vector2(-300.0f, -300.0f));
+	wizard->col->SetWorldPos(Vector2(300.0f, -300.0f));
 }
 
 void Main::Release()
@@ -18,24 +21,33 @@ void Main::Update()
 {
 	player->Fall_Down();
 	player->Action();
-	enemy->Action();
+	warrior->Action();
+	wizard->Action();
 
 	if (!player->b_act_atk1 && !player->b_act_atk2) {
-		enemy->Invicible_Off();
+		warrior->Invicible_Off();
+		wizard->Invicible_Off();
 	}
 
 	bg->Update();
 	player->Update();
-	enemy->Update();
+	warrior->Update();
+	wizard->Update();
 }
 
 void Main::LateUpdate()
 {
-	if(player->atk1_col->Intersect(enemy->col) && player->b_act_atk1) {
-		enemy->Hit(player->Get_Dmg());
+	if(player->atk1_col->Intersect(warrior->col) && player->b_act_atk1) {
+		warrior->Hit(player->Get_Dmg());
 	}
-	if (player->atk2_col->Intersect(enemy->col) && player->b_act_atk2) {
-		enemy->Hit(player->Get_Dmg());
+	if (player->atk2_col->Intersect(warrior->col) && player->b_act_atk2) {
+		warrior->Hit(player->Get_Dmg());
+	}
+	if (player->atk1_col->Intersect(wizard->col) && player->b_act_atk1) {
+		wizard->Hit(player->Get_Dmg());
+	}
+	if (player->atk2_col->Intersect(wizard->col) && player->b_act_atk2) {
+		wizard->Hit(player->Get_Dmg());
 	}
 }
 
@@ -45,7 +57,8 @@ void Main::Render()
 {
 	bg->Render();
 	player->Render();
-	enemy->Render();
+	warrior->Render();
+	wizard->Render();
 }
 
 void Main::ResizeScreen()
