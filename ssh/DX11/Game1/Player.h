@@ -11,6 +11,7 @@ private:
 	ObImage*		attack1;
 	ObImage*		attack2;
 	ObImage*		hit;
+	ObImage*		death;
 	Vector2			move;
 	float			speed;
 	float			gravity;
@@ -26,10 +27,11 @@ public:
 
 	Player(int hp, int dmg, int def);
 	~Player();
-	void Action();
-	void Fall_Down();
-	void Change_State(STATE ps);
-	void Update();
-	void Render();
+	void	Action();
+	void	Fall_Down();
+	void	Change_State(STATE ps);
+	void	Hit(int dmg);
+	void	Update();
+	void	Render();
 };
 

@@ -3,9 +3,9 @@
 void Main::Init()
 {
 	bg = new BackGround();
-	player = new Player(100, 10, 5);
-	warrior = new Enemy(Enemy_Type::Warrior, 100, 10, 0);
-	wizard = new Enemy(Enemy_Type::Wizard, 100, 10, 0);
+	player = new Player(100, 30, 5);
+	warrior = new Enemy(Enemy_Type::Warrior, 100, 30, 0);
+	wizard = new Enemy(Enemy_Type::Wizard, 100, 20, 0);
 
 	warrior->col->SetWorldPos(Vector2(-300.0f, -300.0f));
 	wizard->col->SetWorldPos(Vector2(300.0f, -300.0f));
@@ -21,12 +21,17 @@ void Main::Update()
 {
 	player->Fall_Down();
 	player->Action();
-	warrior->Action();
-	wizard->Action();
+	if (!player->b_dead) {
+		warrior->Action(player->col->GetWorldPos());
+		wizard->Action(player->col->GetWorldPos());
+	}
+
+	if (warrior->b_dead) warrior->Respawn(player->col->GetWorldPos());
+	if (wizard->b_dead) wizard->Respawn(player->col->GetWorldPos());
 
 	if (!player->b_act_atk1 && !player->b_act_atk2) {
-		warrior->Invicible_Off();
-		wizard->Invicible_Off();
+		warrior->b_invicible = false;
+		wizard->b_invicible = false;
 	}
 
 	bg->Update();
@@ -37,12 +42,22 @@ void Main::Update()
 
 void Main::LateUpdate()
 {
+	// 워리어 to 플레이어
+	if (warrior->atk1_col->Intersect(player->col) && warrior->b_act_atk1) {
+		player->Hit(warrior->Get_Dmg());
+	}
+	// 메이지 to 플레이어
+	if (wizard->atk1_col->Intersect(player->col) && wizard->b_act_atk1) {
+		player->Hit(wizard->Get_Dmg());
+	}
+	// 플레이어 to 워리어
 	if(player->atk1_col->Intersect(warrior->col) && player->b_act_atk1) {
 		warrior->Hit(player->Get_Dmg());
 	}
 	if (player->atk2_col->Intersect(warrior->col) && player->b_act_atk2) {
 		warrior->Hit(player->Get_Dmg());
 	}
+	// 플레이어 to 메이지
 	if (player->atk1_col->Intersect(wizard->col) && player->b_act_atk1) {
 		wizard->Hit(player->Get_Dmg());
 	}

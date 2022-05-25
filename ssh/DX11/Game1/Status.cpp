@@ -6,6 +6,10 @@ Status::Status(int hp, int dmg, int def)
 	this->dmg = dmg;
 	this->def = def;
 
+	defalut_hp = this->hp;
+	defalut_dmg = this->dmg;
+	defalut_def = this->def;
+	b_invicible = false;
 	b_dead = false;
 }
 
@@ -18,7 +22,6 @@ void Status::Decrease_Hp(int dmg)
 	if (!b_dead) {
 		hp -= dmg - def;
 		if (hp <= 0) {
-			cout << "À¸¾Ç" << endl;
 			b_dead = true;
 		}
 	}
@@ -49,18 +52,20 @@ void Status::Increase_Def(int sum)
 	if (!b_dead) def += sum;
 }
 
-void Status::Invicible_Off()
-{
-	b_invicible = false;
-}
-
 void Status::Hit(int dmg)
 {
-	if (!b_invicible && !b_dead) {
-		Decrease_Hp(dmg);
-		cout << hp << endl;
-		b_invicible = true;
-	}
+	Decrease_Hp(dmg);
+	b_invicible = true;
+	cout << name << " Hp : " << hp << endl;
+}
+
+void Status::Set_Defalut_Status()
+{
+	hp = defalut_hp;
+	dmg = defalut_dmg;
+	def = defalut_def;
+	b_invicible = false;
+	b_dead = false;
 }
 
 int Status::Get_Hp()

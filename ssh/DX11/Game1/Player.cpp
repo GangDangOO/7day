@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
 Player::Player(int hp, int dmg, int def) : Status(hp, dmg, def){
+	name = "Player";
 
 	col = new ObRect();
 	col->isFilled = false;
@@ -8,53 +9,60 @@ Player::Player(int hp, int dmg, int def) : Status(hp, dmg, def){
 	col->SetWorldPos(Vector2(0.0f, 0.0f));
 
 	idle = new ObImage(L"Player\\Idle.png");
-	idle->scale = Vector2(1980.0f / 11, 180.0f) * 1.5f;
+	idle->scale = Vector2(180.0f, 180.0f) * 1.5f;
 	idle->maxFrame.x = 11;
 	idle->ChangeAnim(ANISTATE::LOOP, 0.1f);
 	idle->frame.x = 0;
 	idle->SetParentRT(*col);
 
 	run = new ObImage(L"Player\\Run.png");
-	run->scale = Vector2(1440.0f / 8, 180.0f) * 1.5f;
+	run->scale = Vector2(180.0f, 180.0f) * 1.5f;
 	run->maxFrame.x = 8;
 	run->ChangeAnim(ANISTATE::LOOP, 0.1f);
 	run->frame.x = 0;
 	run->SetParentRT(*col);
 
 	jump = new ObImage(L"Player\\Jump.png");
-	jump->scale = Vector2(540.0f / 3, 180.0f) * 1.5f;
+	jump->scale = Vector2(180.0f, 180.0f) * 1.5f;
 	jump->maxFrame.x = 3;
 	jump->ChangeAnim(ANISTATE::LOOP, 0.1f);
 	jump->frame.x = 0;
 	jump->SetParentRT(*col);
 
 	fall = new ObImage(L"Player\\Fall.png");
-	fall->scale = Vector2(540.0f / 3, 180.0f) * 1.5f;
+	fall->scale = Vector2(180.0f, 180.0f) * 1.5f;
 	fall->maxFrame.x = 3;
 	fall->ChangeAnim(ANISTATE::LOOP, 0.1f);
 	fall->frame.x = 0;
 	fall->SetParentRT(*col);
 
 	attack1 = new ObImage(L"Player\\Attack1.png");
-	attack1->scale = Vector2(1260.0f / 7, 180.0f) * 1.5f;
+	attack1->scale = Vector2(180.0f, 180.0f) * 1.5f;
 	attack1->maxFrame.x = 7;
 	attack1->ChangeAnim(ANISTATE::ONCE, 0.1f);
 	attack1->frame.x = 0;
 	attack1->SetParentRT(*col);
 
 	attack2 = new ObImage(L"Player\\Attack2.png");
-	attack2->scale = Vector2(1260.0f / 7, 180.0f) * 1.5f;
+	attack2->scale = Vector2(180.0f, 180.0f) * 1.5f;
 	attack2->maxFrame.x = 7;
 	attack2->ChangeAnim(ANISTATE::ONCE, 0.1f);
 	attack2->frame.x = 0;
 	attack2->SetParentRT(*col);
 
 	hit = new ObImage(L"Player\\Take_Hit.png");
-	hit->scale = Vector2(1260.0f / 4, 180.0f) * 1.5f;
+	hit->scale = Vector2(180.0f, 180.0f) * 1.5f;
 	hit->maxFrame.x = 4;
-	hit->ChangeAnim(ANISTATE::ONCE, 0.1f);
+	hit->ChangeAnim(ANISTATE::ONCE, 0.2f);
 	hit->frame.x = 0;
 	hit->SetParentRT(*col);
+
+	death = new ObImage(L"Player\\Death.png");
+	death->scale = Vector2(180.0f, 180.0f) * 1.5f;
+	death->maxFrame.x = 11;
+	death->frame.x = 0;
+	death->ChangeAnim(ANISTATE::ONCE, 0.2f);
+	death->SetParentRT(*col);
 
 	atk1_col = new ObRect();
 	atk1_col->scale = Vector2(40.0f, 100.0f);
@@ -86,82 +94,97 @@ Player::~Player() {
 	SafeDelete(atk1_col);
 	SafeDelete(atk2_col);
 	SafeDelete(hit);
+	SafeDelete(death);
 }
 
 void Player::Action()
 {
 	// 공격
-	if (INPUT->KeyDown(VK_LCONTROL) && b_attack) {
-		if (b_jump) {
-			Change_State(STATE::ATTACK1);
-			move.x = 0.0f;
-		}
-		else {
-			Change_State(STATE::ATTACK2);
-		}
-		b_attack = false;
-	}
-	if (state == STATE::ATTACK1 && attack1->frame.x == attack1->maxFrame.x - 1) {
-		b_attack = true;
-	} else if (state == STATE::ATTACK1 && attack1->frame.x == attack1->maxFrame.x - 4) {
-		b_act_atk1 = true;
-	}
-	if (state == STATE::ATTACK2 && attack2->frame.x == attack2->maxFrame.x - 4) {
-		b_act_atk2 = true;
-		move = Vector2(0.0f, 0.0f);
-	}
-	// 이동
-	if (b_attack) {
-		if (INPUT->KeyDown('A')) {
-			if (b_jump && state != STATE::RUN) {
-				Change_State(STATE::RUN);
+	if (!b_dead) {
+		if (!b_invicible) {
+			if (INPUT->KeyDown(VK_LCONTROL) && b_attack) {
+				if (b_jump) {
+					Change_State(STATE::ATTACK1);
+					move.x = 0.0f;
+				}
+				else {
+					Change_State(STATE::ATTACK2);
+				}
+				b_attack = false;
+			}
+			if (state == STATE::ATTACK1 && attack1->frame.x == attack1->maxFrame.x - 1) {
+				b_attack = true;
+			}
+			else if (state == STATE::ATTACK1 && attack1->frame.x == attack1->maxFrame.x - 4) {
+				b_act_atk1 = true;
+			}
+			if (state == STATE::ATTACK2 && attack2->frame.x == attack2->maxFrame.x - 4) {
+				b_act_atk2 = true;
+				move = Vector2(0.0f, 0.0f);
+			}
+			// 이동
+			if (b_attack) {
+				if (INPUT->KeyDown('A')) {
+					if (b_jump && state != STATE::RUN) {
+						Change_State(STATE::RUN);
+					}
+				}
+				else if (INPUT->KeyDown('D')) {
+					if (b_jump && state != STATE::RUN) {
+						Change_State(STATE::RUN);
+					}
+				}
+				if (INPUT->KeyPress('A')) {
+					if ((b_jump && state == STATE::FALL) ||
+						(b_jump && state == STATE::ATTACK1) ||
+						(b_jump && state == STATE::ATTACK2)) Change_State(STATE::RUN);
+					atk1_col->SetLocalPos(Vector2(-40.0f, 10.0f));
+					atk2_col->SetLocalPos(Vector2(-80.0f, 20.0f));
+					move.x = -speed;
+					run->reverseLR = true;
+					idle->reverseLR = true;
+					jump->reverseLR = true;
+					fall->reverseLR = true;
+					attack1->reverseLR = true;
+					attack2->reverseLR = true;
+					hit->reverseLR = true;
+					death->reverseLR = true;
+				}
+				else if (INPUT->KeyPress('D')) {
+					if ((b_jump && state == STATE::FALL) ||
+						(b_jump && state == STATE::ATTACK1) ||
+						(b_jump && state == STATE::ATTACK2)) Change_State(STATE::RUN);
+					atk1_col->SetLocalPos(Vector2(40.0f, 10.0f));
+					atk2_col->SetLocalPos(Vector2(80.0f, 20.0f));
+
+					move.x = speed;
+					run->reverseLR = false;
+					idle->reverseLR = false;
+					jump->reverseLR = false;
+					fall->reverseLR = false;
+					attack1->reverseLR = false;
+					attack2->reverseLR = false;
+					hit->reverseLR = false;
+					death->reverseLR = false;
+				}
+				else {
+					if (b_jump) Change_State(STATE::IDLE);
+					move.x = 0.0f;
+				}
+				if (INPUT->KeyDown(VK_SPACE) && b_jump) {
+					Change_State(STATE::JUMP);
+					move.y = 300.0f;
+					b_jump = false;
+				}
 			}
 		}
-		else if (INPUT->KeyDown('D')) {
-			if (b_jump && state != STATE::RUN) {
-				Change_State(STATE::RUN);
-			}
+		else if (hit->frame.x == hit->maxFrame.x - 1) {
+			b_invicible = false;
+			Change_State(STATE::IDLE);
 		}
-		if (INPUT->KeyPress('A')) {
-			if ((b_jump && state == STATE::FALL) ||
-				(b_jump && state == STATE::ATTACK1) ||
-				(b_jump && state == STATE::ATTACK2)) Change_State(STATE::RUN);
-			atk1_col->SetLocalPos(Vector2(-40.0f, 10.0f));
-			atk2_col->SetLocalPos(Vector2(-80.0f, 20.0f));
-			move.x = -speed;
-			run->reverseLR = true;
-			idle->reverseLR = true;
-			jump->reverseLR = true;
-			fall->reverseLR = true;
-			attack1->reverseLR = true;
-			attack2->reverseLR = true;
-			hit->reverseLR = true;
-		}
-		else if (INPUT->KeyPress('D')) {
-			if ((b_jump && state == STATE::FALL) ||
-				(b_jump && state == STATE::ATTACK1) ||
-				(b_jump && state == STATE::ATTACK2)) Change_State(STATE::RUN);
-			atk1_col->SetLocalPos(Vector2(40.0f, 10.0f));
-			atk2_col->SetLocalPos(Vector2(80.0f, 20.0f));
-			
-			move.x = speed;
-			run->reverseLR = false;
-			idle->reverseLR = false;
-			jump->reverseLR = false;
-			fall->reverseLR = false;
-			attack1->reverseLR = false;
-			attack2->reverseLR = false;
-			hit->reverseLR = false;
-		}
-		else {
-			if (b_jump && state != STATE::IDLE) Change_State(STATE::IDLE);
-			move.x = 0.0f;
-		}
-		if (INPUT->KeyDown(VK_SPACE) && b_jump) {
-			Change_State(STATE::JUMP);
-			move.y = 300.0f;
-			b_jump = false;
-		}
+	}
+	else {
+		Change_State(STATE::Death);
 	}
 	CAM->position.x += move.x * DELTA;
 	col->MoveWorldPos(move * DELTA);
@@ -171,8 +194,8 @@ void Player::Fall_Down()
 {
 	if (col->GetWorldPos().y > -300.0f) {
 		gravity += 400.0f * DELTA;
-		if (gravity > move.y && state != STATE::FALL && b_attack) {
-			Change_State(STATE::FALL);
+		if (gravity > move.y && b_attack) {
+			if (state != STATE::Hit) Change_State(STATE::FALL);
 		}
 		b_jump = false;
 		col->MoveWorldPos(Vector2(0.0f, -1.0f) * gravity * DELTA);
@@ -233,6 +256,20 @@ void Player::Change_State(STATE ps)
 			hit->visible = true;
 		}
 		else hit->visible = false;
+		if (state == STATE::Death) {
+			death->frame.x = 0;
+			death->visible = true;
+		}
+		else death->visible = false;
+	}
+}
+
+void Player::Hit(int dmg)
+{
+	if (!b_dead && !b_invicible) {
+		move.x = 0.0f;
+		Status::Hit(dmg);
+		Change_State(STATE::Hit);
 	}
 }
 
@@ -247,7 +284,8 @@ void Player::Update()
 	fall->Update();
 	attack1->Update();
 	attack2->Update();
-	// cout << attack2->frame.x << endl;
+	hit->Update();
+	death->Update();
 }
 
 void Player::Render()
@@ -261,4 +299,6 @@ void Player::Render()
 	if (fall->visible) fall->Render();
 	if (attack1->visible) attack1->Render();
 	if (attack2->visible) attack2->Render();
+	if (hit->visible) hit->Render();
+	if (death->visible) death->Render();
 }
