@@ -20,7 +20,7 @@ private:
 	ObImage*	death;
 	int			rd_fatrol;
 	int			rd_spawn;
-	float		time_random = 5.0f;
+	float		time_random = 2.0f;
 	float		time_respawn = 4.0f;
 public:
 	ObRect* col;

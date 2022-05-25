@@ -100,12 +100,13 @@ Enemy::Enemy(Enemy_Type type, int hp, int dmg, int def) : Status(hp, dmg, def)
 		death->ChangeAnim(ANISTATE::ONCE, 0.1f);
 
 		atk1_col = new ObRect();
-		atk1_col->scale = Vector2(40.0f, 40.0f);
+		atk1_col->scale = Vector2(60.0f, 70.0f);
 		atk1_col->isFilled = false;
 		atk1_col->SetParentRT(*col);
+
+		b_act_atk1 = false;
 	}
 	state = STATE::NONE;
-	Change_State(STATE::IDLE);
 }
 
 Enemy::~Enemy()
@@ -124,27 +125,6 @@ Enemy::~Enemy()
 void Enemy::Action(Vector2 player)
 {
 	if (!b_dead) {
-		if (INPUT->KeyDown('E')) {
-			if (col->GetWorldPos().x > player.x) {
-				if (type == Enemy_Type::Warrior) {
-					atk1_col->SetLocalPosX(-20.0f);
-				}
-				else if (type == Enemy_Type::Wizard) {
-					atk1_col->SetLocalPosX(-40.0f);
-				}
-				attack1->reverseLR = true;
-			}
-			else if (col->GetWorldPos().x < player.x) {
-				if (type == Enemy_Type::Warrior) {
-					atk1_col->SetLocalPosX(20.0f);
-				}
-				else if (type == Enemy_Type::Wizard) {
-					atk1_col->SetLocalPosX(40.0f);
-				}
-				attack1->reverseLR = false;
-			}
-			Change_State(STATE::ATTACK1);
-		}
 		if (attack1->frame.x == attack1->maxFrame.x - 3) {
 			b_act_atk1 = true;
 		}
@@ -174,6 +154,7 @@ void Enemy::Action(Vector2 player)
 					hit->reverseLR = false;
 					death->reverseLR = false;
 				}
+				float dir = col->GetWorldPos().x - player.x;
 				switch (rd_fatrol)
 				{
 				case 0:
@@ -184,10 +165,34 @@ void Enemy::Action(Vector2 player)
 					// 플레이어에게 이동
 					Change_State(STATE::RUN);
 					if (run->reverseLR == true) {
-						col->MoveWorldPos(Vector2(-180.0f * DELTA, 0.0f));
+						if (dir < 100.0f) {
+							if (type == Enemy_Type::Warrior) {
+								atk1_col->SetLocalPosX(-20.0f);
+							}
+							else if (type == Enemy_Type::Wizard) {
+								atk1_col->SetLocalPos(Vector2(-50.0f, 30.0f));
+							}
+							attack1->reverseLR = true;
+							Change_State(STATE::ATTACK1);
+						}
+						else {
+							col->MoveWorldPos(Vector2(-180.0f * DELTA, 0.0f));
+						}
 					}
 					else {
-						col->MoveWorldPos(Vector2(180.0f * DELTA, 0.0f));
+						if (dir > -100.0f) {
+							if (type == Enemy_Type::Warrior) {
+								atk1_col->SetLocalPosX(20.0f);
+							}
+							else if (type == Enemy_Type::Wizard) {
+								atk1_col->SetLocalPosX(40.0f);
+							}
+							attack1->reverseLR = false;
+							Change_State(STATE::ATTACK1);
+						}
+						else {
+							col->MoveWorldPos(Vector2(180.0f * DELTA, 0.0f));
+						}
 					}
 					break;
 				case 2:
