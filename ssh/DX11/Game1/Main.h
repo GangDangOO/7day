@@ -7,6 +7,7 @@ private:
 	Player*		player;
 	Enemy*		warrior;
 	Enemy*		wizard;
+	Enemy*		huntress;
 public:
 	virtual void Init() override;
 	virtual void Release() override; //«ÿ¡¶

@@ -1,8 +1,12 @@
 #pragma once
 
+#define RESPAWN_COOL 5.0f
+#define RESET_INT_STATE 2.0f
+#define ATTACK_COOL 1.0f
 enum class Enemy_Type {
 	Warrior,
-	Wizard
+	Wizard,
+	Huntress
 };
 
 class Enemy : public Status
@@ -18,20 +22,26 @@ private:
 	ObImage*	attack2;
 	ObImage*	hit;
 	ObImage*	death;
+	ObImage*	magic;
 	int			rd_fatrol;
 	int			rd_spawn;
-	float		time_random = 2.0f;
-	float		time_respawn = 4.0f;
+	float		time_random;
+	float		time_respawn;
+	float		time_atk_cool;
+	bool		b_power_dir;
 public:
 	ObRect* col;
 	ObRect* atk1_col;
+	ObRect* atk2_col;
 	bool	b_act_atk1;
+	bool	b_act_atk2;
 
 	Enemy(Enemy_Type type, int hp, int dmg, int def);
 	~Enemy();
 	void			Action(Vector2 player);
 	void			Hit(int dmg);
 	void			Change_State(STATE ps);
+	void			Power_Attack(Vector2 pos);
 	void			Respawn(Vector2 pos);
 	void			Update();
 	void			Render();

@@ -1,5 +1,7 @@
 #pragma once
 
+#define INVICIBLE_TIME 2.0f
+
 class Player : public Status
 {
 private:
@@ -16,8 +18,10 @@ private:
 	float			speed;
 	float			gravity;
 	float			cooltime_attack;
+	float			time_invicible;
 	bool			b_jump;
 	bool			b_attack;
+	bool			b_hit;
 public:
 	ObRect*			atk1_col;
 	ObRect*			atk2_col;
@@ -30,7 +34,9 @@ public:
 	void	Action();
 	void	Fall_Down();
 	void	Change_State(STATE ps);
+	void	Invicible_Time();
 	void	Hit(int dmg);
+	void	Hit(int dmg, Vector2 power);
 	void	Update();
 	void	Render();
 };

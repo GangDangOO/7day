@@ -2,7 +2,6 @@
 
 Player::Player(int hp, int dmg, int def) : Status(hp, dmg, def){
 	name = "Player";
-
 	col = new ObRect();
 	col->isFilled = false;
 	col->scale = Vector2(180.0f, 180.0f) / 3;
@@ -14,6 +13,7 @@ Player::Player(int hp, int dmg, int def) : Status(hp, dmg, def){
 	idle->ChangeAnim(ANISTATE::LOOP, 0.1f);
 	idle->frame.x = 0;
 	idle->SetParentRT(*col);
+	cout << idle->color.A() << endl;
 
 	run = new ObImage(L"Player\\Run.png");
 	run->scale = Vector2(180.0f, 180.0f) * 1.5f;
@@ -81,6 +81,8 @@ Player::Player(int hp, int dmg, int def) : Status(hp, dmg, def){
 	b_attack = true;
 	b_act_atk1 = false;
 	b_act_atk2 = false;
+	b_hit = false;
+	time_invicible = INVICIBLE_TIME;
 }
 
 Player::~Player() {
@@ -101,7 +103,8 @@ void Player::Action()
 {
 	// АјАн
 	if (!b_dead) {
-		if (!b_invicible) {
+		if (!b_hit) {
+			Invicible_Time();
 			if (INPUT->KeyDown(VK_LCONTROL) && b_attack) {
 				if (b_jump) {
 					Change_State(STATE::ATTACK1);
@@ -179,8 +182,10 @@ void Player::Action()
 			}
 		}
 		else if (hit->frame.x == hit->maxFrame.x - 1) {
-			b_invicible = false;
-			Change_State(STATE::IDLE);
+			hit->frame.x = 0;
+			b_hit = false;
+			if (!INPUT->KeyPress('A') && !INPUT->KeyPress('D')) Change_State(STATE::IDLE);
+			else Change_State(STATE::RUN);
 		}
 	}
 	else {
@@ -236,6 +241,7 @@ void Player::Change_State(STATE ps)
 		}
 		else fall->visible = false;
 		if (state == STATE::ATTACK1) {
+			attack1->ChangeAnim(ANISTATE::ONCE, 0.1f);
 			attack1->frame.x = 0;
 			attack1->visible = true;
 		}
@@ -244,6 +250,7 @@ void Player::Change_State(STATE ps)
 			attack1->visible = false;
 		}
 		if (state == STATE::ATTACK2) {
+			attack2->ChangeAnim(ANISTATE::ONCE, 0.1f);
 			attack2->frame.x = 0;
 			attack2->visible = true;
 		}
@@ -252,11 +259,13 @@ void Player::Change_State(STATE ps)
 			attack2->visible = false;
 		}
 		if (state == STATE::Hit) {
+			hit->ChangeAnim(ANISTATE::ONCE, 0.2f);
 			hit->frame.x = 0;
 			hit->visible = true;
 		}
 		else hit->visible = false;
 		if (state == STATE::Death) {
+			death->ChangeAnim(ANISTATE::ONCE, 0.2f);
 			death->frame.x = 0;
 			death->visible = true;
 		}
@@ -264,10 +273,49 @@ void Player::Change_State(STATE ps)
 	}
 }
 
+void Player::Invicible_Time()
+{
+	if (b_invicible) {
+		time_invicible -= DELTA;
+		if (time_invicible < 0.0f) {
+			time_invicible = INVICIBLE_TIME;
+			b_invicible = false;
+			idle->color.A(0.5f);
+			run->color.A(0.5f);
+			jump->color.A(0.5f);
+			fall->color.A(0.5f);
+			attack1->color.A(0.5f);
+			attack2->color.A(0.5f);
+		}
+		else {
+			idle->color.A(RANDOM->Float(0.0f, 0.5f));
+			run->color.A(RANDOM->Float(0.0f, 0.5f));
+			jump->color.A(RANDOM->Float(0.0f, 0.5f));
+			fall->color.A(RANDOM->Float(0.0f, 0.5f));
+			attack1->color.A(RANDOM->Float(0.0f, 0.5f));
+			attack2->color.A(RANDOM->Float(0.0f, 0.5f));
+		}
+	}
+}
+
 void Player::Hit(int dmg)
 {
 	if (!b_dead && !b_invicible) {
+		b_attack = true;
+		b_hit = true;
 		move.x = 0.0f;
+		Status::Hit(dmg);
+		Change_State(STATE::Hit);
+	}
+}
+
+void Player::Hit(int dmg, Vector2 power)
+{
+	if (!b_dead && !b_invicible) {
+		move = power;
+		col->SetWorldPosY(-299.0f);
+		b_attack = true;
+		b_hit = true;
 		Status::Hit(dmg);
 		Change_State(STATE::Hit);
 	}
