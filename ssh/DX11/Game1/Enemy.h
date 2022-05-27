@@ -23,6 +23,7 @@ private:
 	ObImage*	hit;
 	ObImage*	death;
 	ObImage*	magic;
+	ObImage*	arrow[5];
 	int			rd_fatrol;
 	int			rd_spawn;
 	float		time_random;
@@ -31,10 +32,12 @@ private:
 	bool		b_power_dir;
 public:
 	ObRect* col;
+	ObRect* arrow_col[5];
 	ObRect* atk1_col;
 	ObRect* atk2_col;
 	bool	b_act_atk1;
 	bool	b_act_atk2;
+	bool	b_arrow_act[5];
 
 	Enemy(Enemy_Type type, int hp, int dmg, int def);
 	~Enemy();

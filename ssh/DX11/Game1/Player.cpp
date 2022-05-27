@@ -338,15 +338,15 @@ void Player::Update()
 
 void Player::Render()
 {
-	col->Render();
+	/*col->Render();
 	atk1_col->Render();
-	atk2_col->Render();
-	if (idle->visible) idle->Render();
-	if (run->visible) run->Render();
-	if (jump->visible) jump->Render();
-	if (fall->visible) fall->Render();
-	if (attack1->visible) attack1->Render();
-	if (attack2->visible) attack2->Render();
-	if (hit->visible) hit->Render();
-	if (death->visible) death->Render();
+	atk2_col->Render();*/
+	idle->Render();
+	run->Render();
+	jump->Render();
+	fall->Render();
+	attack1->Render();
+	attack2->Render();
+	hit->Render();
+	death->Render();
 }

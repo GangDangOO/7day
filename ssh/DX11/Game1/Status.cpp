@@ -21,6 +21,7 @@ void Status::Decrease_Hp(int dmg)
 {
 	if (!b_dead) {
 		hp -= dmg - def;
+		cout << name << " HP : " << hp << endl;
 		if (hp <= 0) {
 			b_dead = true;
 		}

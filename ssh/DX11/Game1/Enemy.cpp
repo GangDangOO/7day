@@ -126,7 +126,7 @@ Enemy::Enemy(Enemy_Type type, int hp, int dmg, int def) : Status(hp, dmg, def)
 		atk1_col->SetParentRT(*col);
 
 		atk2_col = new ObRect();
-		atk2_col->scale = Vector2(800.0f, 800.0f) * 0.15f;
+		atk2_col->scale = Vector2(700.0f, 700.0f) * 0.15f;
 		atk2_col->isFilled = false;
 
 		magic = new ObImage(L"Effect\\12_nebula_spritesheet.png");
@@ -159,12 +159,20 @@ Enemy::Enemy(Enemy_Type type, int hp, int dmg, int def) : Status(hp, dmg, def)
 		run->SetParentRT(*col);
 		run->ChangeAnim(ANISTATE::LOOP, 0.1f);
 
+		wstring w = L"Enemy\\Huntress\\Attack.png";
 		attack1 = new ObImage(L"Enemy\\Huntress\\Attack.png");
 		attack1->scale = Vector2(100.0f, 100.0f) * 2.0f;
 		attack1->maxFrame.x = 6;
 		attack1->frame.x = 0;
 		attack1->SetParentRT(*col);
 		attack1->ChangeAnim(ANISTATE::ONCE, 0.1f);
+
+		attack2 = new ObImage(L"Enemy\\Huntress\\Attack.png");
+		attack2->scale = Vector2(100.0f, 100.0f) * 2.0f;
+		attack2->maxFrame.x = 6;
+		attack2->frame.x = 0;
+		attack2->SetParentRT(*col);
+		attack2->ChangeAnim(ANISTATE::ONCE, 0.1f);
 
 		hit = new ObImage(L"Enemy\\Huntress\\Hit.png");
 		hit->scale = Vector2(100.0f, 100.0f) * 2.0f;
@@ -179,6 +187,23 @@ Enemy::Enemy(Enemy_Type type, int hp, int dmg, int def) : Status(hp, dmg, def)
 		death->frame.x = 0;
 		death->SetParentRT(*col);
 		death->ChangeAnim(ANISTATE::ONCE, 0.1f);
+
+		for (int i = 0; i < 5; i++) {
+			arrow_col[i] = new ObRect();
+			arrow_col[i]->scale = Vector2(24.0f, 5.0f) * 2.0f;
+			arrow_col[i]->isFilled = false;
+			arrow_col[i]->SetWorldPos(Vector2(0.0f, 800.0f));
+
+			arrow[i] = new ObImage(L"Enemy\\Huntress\\Move.png");
+			arrow[i]->scale = Vector2(24.0f, 5.0f) * 2.0f;
+			arrow[i]->maxFrame.x = 2;
+			arrow[i]->frame.x = 0;
+			arrow[i]->SetParentRT(*arrow_col[i]);
+			arrow[i]->ChangeAnim(ANISTATE::LOOP, 0.1f);
+			arrow[i]->visible = false;
+
+			b_arrow_act[i] = false;
+		}
 	}
 	state = STATE::NONE;
 	time_random = RESET_INT_STATE;
@@ -200,13 +225,54 @@ Enemy::~Enemy()
 	SafeDelete(attack1);
 	SafeDelete(attack2);
 	SafeDelete(magic);
+	for (int i = 0; i < 5; i++) {
+		SafeDelete(arrow[i]);
+		SafeDelete(arrow_col[i]);
+	}
 }
 
 void Enemy::Action(Vector2 player)
 {
+	if (type == Enemy_Type::Huntress) {
+		for (int i = 0; i < 5; i++) {
+			if (arrow[i]->visible) {
+				if (!arrow[i]->reverseLR) {
+					arrow_col[i]->MoveWorldPos(Vector2(250.0f, 0.0f) * DELTA);
+					float v = arrow_col[i]->GetWorldPos().x - player.x;
+					if (v < 0.0f) v *= -1.0f;
+					if (v < App.GetHalfWidth()) {
+						arrow[i]->visible = false;
+						b_arrow_act[i] = false;
+					}
+				}
+				else if (arrow[i]->reverseLR) {
+					arrow_col[i]->MoveWorldPos(Vector2(-250.0f, 0.0f) * DELTA);
+					if (arrow[i]->GetWorldPos().x > App.GetHalfWidth() || arrow[i]->GetWorldPos().x < -App.GetHalfWidth()) {
+						arrow[i]->visible = false;
+						b_arrow_act[i] = false;
+					}
+				}
+			}
+		}
+	}
 	if (!b_dead) {
 		float dir = col->GetWorldPos().x - player.x;
-		if (attack1->frame.x == attack1->maxFrame.x - 2) {
+		if (type == Enemy_Type::Huntress) {
+			if (attack1->frame.x == attack1->maxFrame.x - 1) {
+				for (int i = 0; i < 5; i++) {
+					if (!arrow[i]->visible) {
+						arrow_col[i]->SetWorldPos(col->GetWorldPos());
+						arrow[i]->reverseLR = attack1->reverseLR;
+						arrow[i]->visible = true;
+						b_arrow_act[i] = true;
+						attack1->frame.x = 0;
+						break;
+					}
+				}
+				Change_State(STATE::IDLE);
+			}
+		}
+		else if (attack1->frame.x == attack1->maxFrame.x - 3) {
 			b_act_atk1 = true;
 		}
 		else if (attack1->frame.x == attack1->maxFrame.x - 1) {
@@ -279,7 +345,38 @@ void Enemy::Action(Vector2 player)
 				case 1:
 				case 2:
 				case 3:
-					// 플레이어에게 이동
+					// 플레이어에게 이동 후 공격
+					if (type == Enemy_Type::Huntress) {
+						time_atk_cool -= DELTA;
+						if (run->reverseLR == true) {
+							if (dir < 300.0f && time_atk_cool < 0.0f) {
+								attack1->reverseLR = true;
+								Change_State(STATE::ATTACK1);
+								time_atk_cool = ATTACK_COOL;
+							}
+							else if (dir < 300.0f) {
+								Change_State(STATE::IDLE);
+							}
+							else {
+								col->MoveWorldPos(Vector2(-150.0f * DELTA, 0.0f));
+								Change_State(STATE::RUN);
+							}
+						}
+						else {
+							if (dir > -300.0f && time_atk_cool < 0.0f) {
+								attack1->reverseLR = false;
+								Change_State(STATE::ATTACK1);
+								time_atk_cool = ATTACK_COOL;
+							}
+							else if (dir > -300.0f) {
+								Change_State(STATE::IDLE);
+							}
+							else {
+								col->MoveWorldPos(Vector2(150.0f * DELTA, 0.0f));
+								Change_State(STATE::RUN);
+							}
+						}
+					} else
 					if (run->reverseLR == true) {
 						if (dir < 100.0f && time_atk_cool < 0.0f) {
 							if (type == Enemy_Type::Warrior) {
@@ -348,6 +445,8 @@ void Enemy::Action(Vector2 player)
 void Enemy::Hit(int dmg)
 {
 	if (!b_dead && !b_invicible) {
+		b_act_atk1 = false;
+		b_act_atk2 = false;
 		Status::Hit(dmg);
 		Change_State(STATE::Hit);
 	}
@@ -389,21 +488,25 @@ void Enemy::Change_State(STATE ps)
 
 		if (state == STATE::ATTACK2) {
 			cout << name << "특수공격" << endl;
+			// 전사 특수공격
 			if (type == Enemy_Type::Warrior) attack2->ChangeAnim(ANISTATE::LOOP, 0.25f);
-			if (type == Enemy_Type::Wizard) {
+			// 법사 특수공격
+			else if (type == Enemy_Type::Wizard) {
 				attack2->ChangeAnim(ANISTATE::ONCE, 0.15f);
 				magic->frame.x = 0;
 				magic->visible = true;
 				atk2_col->SetWorldPos(Vector2(col->GetWorldPos().x, col->GetWorldPos().y + 100.0f));
 			}
+			// 활쟁이 특수공격
+			else if (type == Enemy_Type::Huntress) {
+
+			}
 			attack2->visible = true;
 		}
 		else {
-			if (type != Enemy_Type::Huntress) {
-				attack2->frame.x = 0;
-				b_act_atk2 = false;
-				attack2->visible = false;
-			}
+			if (type == Enemy_Type::Warrior) b_act_atk2 = false;
+			attack2->frame.x = 0;
+			attack2->visible = false;
 			if (type == Enemy_Type::Wizard) {
 				magic->visible = false;
 			}
@@ -454,24 +557,34 @@ void Enemy::Update()
 	idle->Update();
 	run->Update();
 	attack1->Update();
-	if (type != Enemy_Type::Huntress) attack2->Update();
+	attack2->Update();
 	hit->Update();
 	death->Update();
 	if (type == Enemy_Type::Wizard) magic->Update();
+	if (type == Enemy_Type::Huntress)
+		for (int i = 0; i < 5; i++) {
+			arrow[i]->Update();
+			arrow_col[i]->Update();
+		}
 }
 
 void Enemy::Render()
 {
-	col->Render();
+	/*col->Render();
 	if (type != Enemy_Type::Huntress) atk1_col->Render();
-	if (type != Enemy_Type::Huntress) atk2_col->Render();
+	if (type != Enemy_Type::Huntress) atk2_col->Render();*/
 	idle->Render();
 	run->Render();
 	attack1->Render();
-	if (type != Enemy_Type::Huntress) attack2->Render();
+	attack2->Render();
 	hit->Render();
 	death->Render();
 	if (type == Enemy_Type::Wizard) magic->Render();
+	if (type == Enemy_Type::Huntress)
+		for (int i = 0; i < 5; i++) {
+			arrow[i]->Render();
+			// arrow_col[i]->Render();
+		}
 }
 
 void Enemy::Power_Attack(Vector2 pos)
@@ -495,8 +608,11 @@ void Enemy::Power_Attack(Vector2 pos)
 		}
 	}
 	else if (type == Enemy_Type::Wizard) {
+		Vector2 v = pos;
+		v.Normalize();
+		v *= DELTA * 250.0f;
 		Change_State(STATE::ATTACK2);
 		b_act_atk2 = true;
-		atk2_col->MoveWorldPos(pos * DELTA * 0.1f);
+		atk2_col->MoveWorldPos(v);
 	}
 }

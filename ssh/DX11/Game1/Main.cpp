@@ -3,7 +3,7 @@
 void Main::Init()
 {
 	bg = new BackGround();
-	player = new Player(100, 30, 5);
+	player = new Player(100, 2000, 5);
 	warrior = new Enemy(Enemy_Type::Warrior, 100, 30, 0);
 	wizard = new Enemy(Enemy_Type::Wizard, 100, 20, 0);
 	huntress = new Enemy(Enemy_Type::Huntress, 100, 10, 0);
@@ -49,20 +49,30 @@ void Main::Update()
 void Main::LateUpdate()
 {
 	// 워리어 to 플레이어
-	if (warrior->atk1_col->Intersect(player->col) && warrior->b_act_atk1) {
-		player->Hit(warrior->Get_Dmg());
-	}
-	else if (warrior->atk2_col->Intersect(player->col) && warrior->b_act_atk2) {
-		if (warrior->col->GetWorldPos().x > player->col->GetWorldPos().x) player->Hit(warrior->Get_Dmg(), Vector2(-800.0f, 200.0f));
-		else player->Hit(warrior->Get_Dmg(), Vector2(800.0f, 200.0f));
-	}
+	if (!warrior->b_dead)
+		if (warrior->atk1_col->Intersect(player->col) && warrior->b_act_atk1) {
+			player->Hit(warrior->Get_Dmg());
+		}
+		else if (warrior->atk2_col->Intersect(player->col) && warrior->b_act_atk2) {
+			if (warrior->col->GetWorldPos().x > player->col->GetWorldPos().x) player->Hit(warrior->Get_Dmg(), Vector2(-800.0f, 200.0f));
+			else player->Hit(warrior->Get_Dmg(), Vector2(800.0f, 200.0f));
+		}
 	// 메이지 to 플레이어
-	if (wizard->atk1_col->Intersect(player->col) && wizard->b_act_atk1) {
-		player->Hit(wizard->Get_Dmg());
-	}
+	if (!wizard->b_dead)
+		if (wizard->atk1_col->Intersect(player->col) && wizard->b_act_atk1) {
+			player->Hit(wizard->Get_Dmg());
+		}
 	else if (wizard->atk2_col->Intersect(player->col) && wizard->b_act_atk2) {
 		player->Hit(wizard->Get_Dmg());
 	}
+	// 아쳐 to 플레이어
+	if (!huntress->b_dead)
+		for (int i = 0; i < 5; i++) {
+			if (huntress->arrow_col[i]->Intersect(player->col) && huntress->b_arrow_act[i]) {
+				player->Hit(huntress->Get_Dmg());
+				cout << "히트 " << huntress->b_arrow_act[i] << endl;
+			}
+		}
 	// 플레이어 to 워리어
 	if(player->atk1_col->Intersect(warrior->col) && player->b_act_atk1) {
 		warrior->Hit(player->Get_Dmg());
@@ -76,6 +86,13 @@ void Main::LateUpdate()
 	}
 	if (player->atk2_col->Intersect(wizard->col) && player->b_act_atk2) {
 		wizard->Hit(player->Get_Dmg());
+	}
+	// 플레이어 to 아쳐
+	if (player->atk1_col->Intersect(huntress->col) && player->b_act_atk1) {
+		huntress->Hit(player->Get_Dmg());
+	}
+	if (player->atk2_col->Intersect(huntress->col) && player->b_act_atk2) {
+		huntress->Hit(player->Get_Dmg());
 	}
 }
 
