@@ -6,6 +6,7 @@ private:
 	BackGround* bg;
 	Player*		player;
 	Enemy*		warrior;
+	Enemy*		warrior2;
 	Enemy*		wizard;
 	Enemy*		huntress;
 public:

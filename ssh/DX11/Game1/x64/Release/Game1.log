@@ -1,0 +1,97 @@
+﻿  BackGround.cpp
+  Enemy.cpp
+  Status.cpp
+  Main.cpp
+  Player.cpp
+  Scene1.cpp
+  Scene2.cpp
+2DFrameWork.lib(ObImage.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(ObImage.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(ObImage.obj) : warning LNK4075: '/EDITANDCONTINUE'이(가) '/OPT:ICF' 사양으로 인해 무시됩니다.
+2DFrameWork.lib(Camera.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Camera.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Window.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Window.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Timer.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Timer.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Random.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Random.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(GameObject.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(GameObject.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(ObRect.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(ObRect.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Input.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Input.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Direct3D11.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Direct3D11.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Texture.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Texture.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Shader.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Shader.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Gui.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Gui.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Sound.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Sound.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(SceneManager.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(SceneManager.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(ObStar.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(ObStar.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(ObCircle.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(ObCircle.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(ObLine.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(ObLine.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Util.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+2DFrameWork.lib(Util.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexImage.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexImage.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexWIC.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexWIC.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexD3D11.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexD3D11.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexUtil.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexUtil.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexConvert.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexConvert.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexMipMaps.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexMipMaps.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexCompress.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(DirectXTexCompress.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(BC.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(BC.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(BC4BC5.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(BC4BC5.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(BC6HBC7.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+DirectXTex.lib(BC6HBC7.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+ImGui.lib(ImGuiFileDialog.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+ImGui.lib(ImGuiFileDialog.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+msvcprtd.lib(locale0_implib.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(BackGround.obj에 위치) 값과 일치하지 않습니다.
+     C:\Users\user\Documents\7day\ssh\DX11\x64\Release\Game1.lib 라이브러리 및 C:\Users\user\Documents\7day\ssh\DX11\x64\Release\Game1.exp 개체를 생성하고 있습니다.
+LINK : warning LNK4098: 'MSVCRTD' defaultlib가 다른 라이브러리와 충돌합니다. /NODEFAULTLIB:library를 사용하십시오.
+2DFrameWork.lib(Sound.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+2DFrameWork.lib(SceneManager.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+DirectXTex.lib(DirectXTexMipMaps.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+ImGui.lib(ImGuiFileDialog.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+2DFrameWork.lib(Direct3D11.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+2DFrameWork.lib(Texture.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+2DFrameWork.lib(Shader.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+2DFrameWork.lib(Gui.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+2DFrameWork.lib(ObImage.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+2DFrameWork.lib(Window.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+2DFrameWork.lib(Random.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+2DFrameWork.lib(GameObject.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__invalid_parameter
+2DFrameWork.lib(Sound.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+2DFrameWork.lib(SceneManager.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+DirectXTex.lib(DirectXTexMipMaps.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+ImGui.lib(ImGuiFileDialog.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+2DFrameWork.lib(Direct3D11.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+2DFrameWork.lib(Texture.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+2DFrameWork.lib(Shader.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+2DFrameWork.lib(Gui.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+2DFrameWork.lib(ObImage.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+2DFrameWork.lib(Window.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+2DFrameWork.lib(Random.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+2DFrameWork.lib(GameObject.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__CrtDbgReport
+ImGui.lib(ImGuiFileDialog.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__calloc_dbg
+msvcprtd.lib(locale0_implib.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__free_dbg
+msvcprtd.lib(locale0_implib.obj) : error LNK2001: 확인할 수 없는 외부 기호 __imp__malloc_dbg
+C:\Users\user\Documents\7day\ssh\DX11\x64\Release\Game1.exe : fatal error LNK1120: 5개의 확인할 수 없는 외부 참조입니다.

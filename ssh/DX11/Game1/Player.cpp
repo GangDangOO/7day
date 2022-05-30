@@ -83,6 +83,7 @@ Player::Player(int hp, int dmg, int def) : Status(hp, dmg, def){
 	b_act_atk2 = false;
 	b_hit = false;
 	time_invicible = INVICIBLE_TIME;
+	power = 0.0f;
 }
 
 Player::~Player() {
@@ -186,6 +187,15 @@ void Player::Action()
 			b_hit = false;
 			if (!INPUT->KeyPress('A') && !INPUT->KeyPress('D')) Change_State(STATE::IDLE);
 			else Change_State(STATE::RUN);
+		}
+		if (power > DELTA) {
+			power -= DELTA;
+		}
+		else if (power < DELTA) {
+			power += DELTA;
+		}
+		else {
+			power = 0.0f;
 		}
 	}
 	else {
@@ -309,14 +319,19 @@ void Player::Hit(int dmg)
 	}
 }
 
-void Player::Hit(int dmg, Vector2 power)
+void Player::Hit(int dmg, float power, bool left)
 {
 	if (!b_dead && !b_invicible) {
-		move = power;
+		this->power = power;
+		if (!left) this->power *= -1.0f;
 		col->SetWorldPosY(-299.0f);
 		b_attack = true;
 		b_hit = true;
 		Status::Hit(dmg);
+		if (Get_Hp() <= 0) {
+			move = Vector2(0.0f, 0.0f);
+			this->power = 0.0f;
+		}
 		Change_State(STATE::Hit);
 	}
 }

@@ -426,7 +426,8 @@ void Enemy::Action(Vector2 player)
 					break;
 				case 4:
 					// 클래스별 특수행동
-					Power_Attack(player);
+					if (type == Enemy_Type::Huntress) Change_State(STATE::IDLE);
+					else Power_Attack(player);
 					break;
 				default:
 					break;
@@ -493,9 +494,9 @@ void Enemy::Change_State(STATE ps)
 			// 법사 특수공격
 			else if (type == Enemy_Type::Wizard) {
 				attack2->ChangeAnim(ANISTATE::ONCE, 0.15f);
+				magic->color.A(0.0f);
 				magic->frame.x = 0;
 				magic->visible = true;
-				atk2_col->SetWorldPos(Vector2(col->GetWorldPos().x, col->GetWorldPos().y + 100.0f));
 			}
 			// 활쟁이 특수공격
 			else if (type == Enemy_Type::Huntress) {
@@ -608,11 +609,13 @@ void Enemy::Power_Attack(Vector2 pos)
 		}
 	}
 	else if (type == Enemy_Type::Wizard) {
-		Vector2 v = pos;
-		v.Normalize();
-		v *= DELTA * 250.0f;
 		Change_State(STATE::ATTACK2);
-		b_act_atk2 = true;
-		atk2_col->MoveWorldPos(v);
+		magic->color.A(magic->color.A() + DELTA * 0.5f);
+		if (magic->color.A() < 0.2f) atk2_col->SetWorldPos(pos);
+		if (magic->color.A() >= 0.5f) {
+			magic->color.A(0.5f);
+			b_act_atk2 = true;
+		}
+		else b_act_atk2 = false;
 	}
 }

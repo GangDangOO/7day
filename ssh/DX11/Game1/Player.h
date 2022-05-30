@@ -15,6 +15,7 @@ private:
 	ObImage*		hit;
 	ObImage*		death;
 	Vector2			move;
+	float			power;
 	float			speed;
 	float			gravity;
 	float			cooltime_attack;
@@ -36,7 +37,7 @@ public:
 	void	Change_State(STATE ps);
 	void	Invicible_Time();
 	void	Hit(int dmg);
-	void	Hit(int dmg, Vector2 power);
+	void	Hit(int dmg, float power, bool left);
 	void	Update();
 	void	Render();
 };

@@ -1,0 +1,1766 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::TEX_ALPHA_MODE'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.h"
+                },
+                "region": {
+                  "startLine": 161,
+                  "startColumn": 22,
+                  "endLine": 161,
+                  "endColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?SetAlphaMode@TexMetadata@DirectX@@QEAAXW4TEX_ALPHA_MODE@2@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::TEX_DIMENSION'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.h"
+                },
+                "region": {
+                  "startLine": 165,
+                  "startColumn": 53,
+                  "endLine": 165,
+                  "endColumn": 74
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?IsVolumemap@TexMetadata@DirectX@@QEBA_NXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::CP_FLAGS'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.inl"
+                },
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 1,
+                  "endLine": 17,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??UDirectX@@YA?AW4CP_FLAGS@0@W410@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::DDS_FLAGS'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.inl"
+                },
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 1,
+                  "endLine": 18,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??UDirectX@@YA?AW4DDS_FLAGS@0@W410@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::TGA_FLAGS'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.inl"
+                },
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 1,
+                  "endLine": 19,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??UDirectX@@YA?AW4TGA_FLAGS@0@W410@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::WIC_FLAGS'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.inl"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 1,
+                  "endLine": 20,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??UDirectX@@YA?AW4WIC_FLAGS@0@W410@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::TEX_FR_FLAGS'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.inl"
+                },
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 1,
+                  "endLine": 21,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??UDirectX@@YA?AW4TEX_FR_FLAGS@0@W410@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::TEX_FILTER_FLAGS'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.inl"
+                },
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??UDirectX@@YA?AW4TEX_FILTER_FLAGS@0@W410@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::TEX_PMALPHA_FLAGS'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.inl"
+                },
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 1,
+                  "endLine": 23,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??UDirectX@@YA?AW4TEX_PMALPHA_FLAGS@0@W410@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::TEX_COMPRESS_FLAGS'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.inl"
+                },
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 1,
+                  "endLine": 24,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??UDirectX@@YA?AW4TEX_COMPRESS_FLAGS@0@W410@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::CNMAP_FLAGS'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.inl"
+                },
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 1,
+                  "endLine": 25,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??UDirectX@@YA?AW4CNMAP_FLAGS@0@W410@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'DirectX::CMSE_FLAGS'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.inl"
+                },
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 1,
+                  "endLine": 26,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??UDirectX@@YA?AW4CMSE_FLAGS@0@W410@0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'FMOD_RESULT'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/Fmod/fmod.hpp"
+                },
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 248,
+                  "endLine": 36,
+                  "endColumn": 323
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?Memory_Initialize@FMOD@@YA?AW4FMOD_RESULT@@PEAXHP6APEAXIIPEBD@ZP6APEAX0II1@ZP6AX0I1@ZI@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'FMOD_DEBUG_MODE'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/Fmod/fmod.hpp"
+                },
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 24,
+                  "endLine": 38,
+                  "endColumn": 24
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?Debug_Initialize@FMOD@@YA?AW4FMOD_RESULT@@IW4FMOD_DEBUG_MODE@@P6A?AW42@IPEBDH11@Z1@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "열거형 형식 'FMOD_THREAD_TYPE'이(가) 범위가 지정되지 않았습니다. 'enum'(Enum.3) 대신 'enum class'를 사용하세요."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/Fmod/fmod.hpp"
+                },
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 24,
+                  "endLine": 41,
+                  "endColumn": 24
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?Thread_SetAttributes@FMOD@@YA?AW4FMOD_RESULT@@W4FMOD_THREAD_TYPE@@_KHI@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28182",
+          "message": {
+            "text": "NULL 포인터를 역참조하고 있습니다. 'files'에 'realloc()`920'과(와) 동일한 NULL 값이 포함되어 있습니다. 이 오류가 발생할 수 있는 이전 위치는 줄 961을(를) 참조하십시오."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                },
+                "region": {
+                  "startLine": 999,
+                  "startColumn": 13,
+                  "endLine": 999,
+                  "endColumn": 26
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "scandir",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 888,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 889,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 890,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 891,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 892,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 893,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 894,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 895,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 896,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 899,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 900,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 903,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 906,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 907,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 908,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 911,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 913,
+                            "startColumn": 33
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 920,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 921,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 923,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 924,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 934,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 935,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 936,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 944,
+                            "startColumn": 46
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 947,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 948,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 951,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 956,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 959,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 961,
+                            "startColumn": 39
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 962,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 965,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 903,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 906,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 907,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 908,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 911,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 916,
+                            "startColumn": 33
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 920,
+                            "startColumn": 19
+                          }
+                        },
+                        "message": {
+                          "text": "'files'은(는) NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "선언"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 921,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 건너뛰기, ('p!=0'이(가) false라고 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "분기"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 927,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 994,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 997,
+                            "startColumn": 16
+                          }
+                        },
+                        "message": {
+                          "text": "이 분기 시작, ('result<0' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "분기"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 998,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 998,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "이 루프 시작, ('i<size' 가정)"
+                        }
+                      },
+                      "kinds": [
+                        "분기"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+                          },
+                          "region": {
+                            "startLine": 999,
+                            "startColumn": 18
+                          }
+                        },
+                        "message": {
+                          "text": "'files'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "사용법"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C28251",
+          "message": {
+            "text": "'wWinMain'에 대한 주석이 일치하지 않습니다. 이 인스턴스에는 주석 없음이(가) 있습니다. c:\\program files (x86)\\windows kits\\10\\include\\10.0.19041.0\\um\\winbase.h(1019)을(를) 참조하십시오. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Game1/Main.cpp"
+                },
+                "region": {
+                  "startLine": 136,
+                  "startColumn": 12,
+                  "endLine": 136,
+                  "endColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "wWinMain",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'Main::bg' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Game1/Main.h"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 1,
+                  "endLine": 20,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Main@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Main::bg"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'Main::player' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Game1/Main.h"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 1,
+                  "endLine": 20,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Main@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Main::player"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'Main::warrior' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Game1/Main.h"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 1,
+                  "endLine": 20,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Main@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Main::warrior"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'Main::warrior2' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Game1/Main.h"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 1,
+                  "endLine": 20,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Main@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Main::warrior2"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'Main::wizard' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Game1/Main.h"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 1,
+                  "endLine": 20,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Main@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Main::wizard"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'Main::huntress' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Game1/Main.h"
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 1,
+                  "endLine": 20,
+                  "endColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Main@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "Main::huntress"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.29.30133.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x00CEC1B0 -il C:\\Users\\user\\AppData\\Local\\Temp\\_CL_7b19c861ast -typedil -f Main.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1929 -D_MSC_FULL_VER=192930133 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -nologo -W 3 -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -Ot -DCODE_ANALYSIS -D_DEBUG -D_WINDOWS -D_UNICODE -DUNICODE -EHs -D_CPPUNWIND -EHc -D__MSVC_RUNTIME_CHECKS -RTCs -RTCu -MDd -D_DEBUG -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -FoC:\\Users\\user\\Documents\\7day\\ssh\\DX11\\\\Build\\Obj\\Main.obj -FdC:\\Users\\user\\Documents\\7day\\ssh\\DX11\\\\Build\\Obj\\vc142.pdb -external:W 3 -Gd -analyze:projectdirectory C:\\Users\\user\\Documents\\7day\\ssh\\DX11\\Game1 -analyze:rulesetdirectory ;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -external:I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "7ea599e693927aefe6b671d287194d0a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/DirectXTex/DirectXTex.inl"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "9191b00d230296d3f434016aeebf6552"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/Fmod/fmod.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "8831f0ffe30789c9805c2142b2b7a7a2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Libs/ImGui/dirent.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "b8ad935ccd8495fc9ca1b4cad35e39f2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Game1/Main.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "417cf4086a2ba8ee46e4fd8d2ce7c9b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/user/Documents/7day/ssh/DX11/Game1/Main.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "8795857f8ec5258be16c3745cc7c3174"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/game1/stdafx.h"
+          },
+          "hashes": {
+            "md5": "27930438f1ee667ea0c3851584cb3a23"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/framework.h"
+          },
+          "hashes": {
+            "md5": "2be3fca0d38d1e0a4d9930cb447268b1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/directxtk/simplemath.h"
+          },
+          "hashes": {
+            "md5": "e8d84e5cf3834263da984214c5bce481"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/directxtk/simplemath.inl"
+          },
+          "hashes": {
+            "md5": "3adb9db2a38d9a42bc313a168d0b14ef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/fmod/fmod_common.h"
+          },
+          "hashes": {
+            "md5": "c80da12a9b8a9c75a025c7d3522ed253"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/fmod/fmod_codec.h"
+          },
+          "hashes": {
+            "md5": "6c29f886351c5bcdda29f843f74745f3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/fmod/fmod_dsp.h"
+          },
+          "hashes": {
+            "md5": "4a94c74109723234f8ab9157bae2b90b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/fmod/fmod_dsp_effects.h"
+          },
+          "hashes": {
+            "md5": "7acb66f9fada7edee27d57a5e3e7d2dc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/fmod/fmod_output.h"
+          },
+          "hashes": {
+            "md5": "c901f983ee89fcdb95d753ffb3692e37"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/fmod/fmod.h"
+          },
+          "hashes": {
+            "md5": "7a2e14fa0961d897acc232460bd485cf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/imgui/imgui.h"
+          },
+          "hashes": {
+            "md5": "11712f609f0421cee9da639e3687d4cc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/imgui/imconfig.h"
+          },
+          "hashes": {
+            "md5": "1f8f757615416f541010da4d739008d2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/imgui/imgui_internal.h"
+          },
+          "hashes": {
+            "md5": "faf03fe9c4e018a07c0bb74a52af4e20"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/imgui/imstb_textedit.h"
+          },
+          "hashes": {
+            "md5": "1310a7c1c1617ac4995b1e90e3b1a32c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/imgui/imgui_impl_dx11.h"
+          },
+          "hashes": {
+            "md5": "14bd217c3f5bef28ca4c8da9fc939dda"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/imgui/imgui_impl_win32.h"
+          },
+          "hashes": {
+            "md5": "36e75e4cdbace766f8668ed900560be7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/imgui/imguifiledialog.h"
+          },
+          "hashes": {
+            "md5": "d464a27f5c599e6b55290f1df3928433"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/libs/imgui/imguifiledialogconfig.h"
+          },
+          "hashes": {
+            "md5": "50611f30b4339086261799ed91d67ec8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/types.h"
+          },
+          "hashes": {
+            "md5": "d0c2d91200ba487cc73a6be35e6d34bf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/window.h"
+          },
+          "hashes": {
+            "md5": "43716fa66af267d7b6ce503eafa5257c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/direct3d11.h"
+          },
+          "hashes": {
+            "md5": "dd89f5ac96f9e158253a59e17114969a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/gui.h"
+          },
+          "hashes": {
+            "md5": "ab0c6ed62d79c514cbb670e45da22fc6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/input.h"
+          },
+          "hashes": {
+            "md5": "e08ef74833f11b8f58acf455d18de309"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/timer.h"
+          },
+          "hashes": {
+            "md5": "7aaee13949762e8a9b962016b273b40c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/camera.h"
+          },
+          "hashes": {
+            "md5": "4483e272374782db2181a0371d6685b8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/random.h"
+          },
+          "hashes": {
+            "md5": "ad843c0d571051721f0ae005246f1701"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/texture.h"
+          },
+          "hashes": {
+            "md5": "941e8ee846ccd5f4cd899128f0a125ef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/sound.h"
+          },
+          "hashes": {
+            "md5": "1974ef31e884434d5077dddd6712cbf0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/scenemanager.h"
+          },
+          "hashes": {
+            "md5": "43fb6981cb6015d621d11df7820c60b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/vertextype.h"
+          },
+          "hashes": {
+            "md5": "c4577a139e435d6eda2ca2fea4dff073"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/shader.h"
+          },
+          "hashes": {
+            "md5": "b73934b6ab63497009fb9a26def60b30"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/gameobject.h"
+          },
+          "hashes": {
+            "md5": "757ec0e440f42fe1c1010d8c6f22634c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/util.h"
+          },
+          "hashes": {
+            "md5": "2240f1f11da802507ebb70842b74044f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/obrect.h"
+          },
+          "hashes": {
+            "md5": "fddd08d1bcd565ca0e148d423ecb91c5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/obstar.h"
+          },
+          "hashes": {
+            "md5": "a6670a20fbc4bfb812e5a9dd7e4b86d9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/obcircle.h"
+          },
+          "hashes": {
+            "md5": "829efb826bac19d420ac3170560e57d7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/obline.h"
+          },
+          "hashes": {
+            "md5": "f1a26367856a73d7423c67d263272cf7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/2dframework/obimage.h"
+          },
+          "hashes": {
+            "md5": "3fb5ff847386bea108e4564e97b6704c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/game1/background.h"
+          },
+          "hashes": {
+            "md5": "d155a97336c5320c6a3246ffac4f6b86"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/game1/status.h"
+          },
+          "hashes": {
+            "md5": "60ca1acdfb18b297b679e0f8851b5f68"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/game1/player.h"
+          },
+          "hashes": {
+            "md5": "740df8a0d7cf82ab856a5acdfe6eb2b2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/user/documents/7day/ssh/dx11/game1/enemy.h"
+          },
+          "hashes": {
+            "md5": "5dc9ca49f4ad04354f1bd7e3732dad5c"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+﻿  BackGround.cpp
+  Enemy.cpp
+  Status.cpp
+  Main.cpp
+  Player.cpp
+  Scene1.cpp
+  Scene2.cpp
+BackGround.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __thiscall ObImage::ObImage(class std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >)" (??0ObImage@@QAE@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z)
+BackGround.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __thiscall Camera::Camera(void)" (??0Camera@@QAE@XZ)
+Enemy.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: void __thiscall ObImage::ChangeAnim(enum ANISTATE,float,bool)" (?ChangeAnim@ObImage@@QAEXW4ANISTATE@@M_N@Z)
+Enemy.obj : error LNK2001: 확인할 수 없는 외부 기호 "class Application App" (?App@@3VApplication@@A)
+Enemy.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __thiscall Timer::Timer(void)" (??0Timer@@QAE@XZ)
+Enemy.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: float __thiscall Random::Float(float,float)" (?Float@Random@@QAEMMM@Z)
+Enemy.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: int __thiscall Random::Int(int,int)" (?Int@Random@@QAEHHH@Z)
+Enemy.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __thiscall Random::Random(void)" (??0Random@@QAE@XZ)
+Enemy.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: void __thiscall GameObject::MoveWorldPos(struct DirectX::SimpleMath::Vector2)" (?MoveWorldPos@GameObject@@QAEXUVector2@SimpleMath@DirectX@@@Z)
+Enemy.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: void __thiscall GameObject::SetWorldPosX(float)" (?SetWorldPosX@GameObject@@QAEXM@Z)
+Enemy.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: void __thiscall GameObject::SetWorldPos(struct DirectX::SimpleMath::Vector2)" (?SetWorldPos@GameObject@@QAEXUVector2@SimpleMath@DirectX@@@Z)
+Enemy.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __thiscall ObRect::ObRect(void)" (??0ObRect@@QAE@XZ)
+Main.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: unsigned int __thiscall Window::Run(class Scene *)" (?Run@Window@@QAEIPAVScene@@@Z)
+Main.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: bool __thiscall GameObject::Intersect(class GameObject *)" (?Intersect@GameObject@@QAE_NPAV1@@Z)
+Player.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: bool __thiscall Input::KeyPress(int)" (?KeyPress@Input@@QAE_NH@Z)
+Player.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: bool __thiscall Input::KeyDown(int)" (?KeyDown@Input@@QAE_NH@Z)
+Player.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: __thiscall Input::Input(void)" (??0Input@@QAE@XZ)
+Player.obj : error LNK2001: 확인할 수 없는 외부 기호 "public: void __thiscall GameObject::SetWorldPosY(float)" (?SetWorldPosY@GameObject@@QAEXM@Z)
+C:\Users\user\Documents\7day\ssh\DX11\Release\Game1.exe : fatal error LNK1120: 18개의 확인할 수 없는 외부 참조입니다.
